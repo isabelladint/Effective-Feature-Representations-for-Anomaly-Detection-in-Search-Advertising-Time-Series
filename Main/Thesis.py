@@ -730,9 +730,8 @@ for campaignId in base['campaignId'][:2]:
 
 #### calculating the CPC feature
 CPC = clean.copy(deep=True)
-CPC['CPC'] = round(CPC['clicks']/CPC['impressions'],2)
-CPC.drop(['impressions','clicks'],axis=1,inplace=True)
-CPC['CPC'].max()
+CPC['CPC'] = round(CPC['cost']/CPC['clicks'],2)
+CPC.drop(['clicks','cost'],axis=1,inplace=True)
 
 
 # In[96]:
