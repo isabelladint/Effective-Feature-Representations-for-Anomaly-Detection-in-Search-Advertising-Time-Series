@@ -26,7 +26,7 @@ Below are the structured comments directly found within the python file to help 
 4C4 From unique values of the anomaly score, x <= -2 is taken as detected anomaly, as those had the two highest weights and two lowest calculated score.
 4C5 column containing percentage of -1 per column in split + column containing anomaly score = save into csv
 
-D: Extended Isolation Forest
+### D: Extended Isolation Forest
 4D1 Data is split by k=3 fold twice, and then split by time 5 times, creating 30 separate splits based on date and campaignId. EIF model is applied on each split, creating a column with -1 where an anomaly is encountered, and None where the row was used in the test set. 
 Anomalies are those that occur less frequently, hence, the number of points with higher anomaly scores reduces as the score increases
 4D2 Each split indicates whether the model saw it as an anomaly, hence an average needs to be taken.
@@ -38,30 +38,28 @@ Anomalies are those that occur less frequently, hence, the number of points with
 ### CTR lag 1 dataframe
 ### CTR lag 1 model application
 
-Chapter 5A1 Isolation Forest on CTR lag 1
-
+### Chapter 5A1 Isolation Forest on CTR lag 1
 Data is split by k=3 fold twice, and then split by time 5 times, creating 30 separate splits based on date and campaignId. Isolation Forest model is applied on each split, creating a column with -1 where an anomaly is encountered, and None where the row was used in the test set. 
 5A2 Each split indicates whether the model saw it as an anomaly, hence an average needs to be taken.
 5A3 Custom function to take a weighted average from the splits. Later splits have more importance as they take more data into account and hence have more weight. A new column is assigned the calculated function result, from which the lowest values are the highest possibility of an anomalous campaign
 5A4 From unique values of the anomaly score, x <= -2 is taken as detected anomaly, as those had the two highest weights and two lowest calculated score.
 5A5 column containing percentage of -1 per column in split + column containing anomaly score = save into csv
 
-Chapter 5B1 Local Outlier Factor on CTR lag 1
-
+### Chapter 5B1 Local Outlier Factor on CTR lag 1
 Data is split by k=3 fold twice, and then split by time 5 times, creating 30 separate splits based on date and campaignId. Isolation Forest model is applied on each split, creating a column with -1 where an anomaly is encountered, and None where the row was used in the test set. 
 5B2 Each split indicates whether the model saw it as an anomaly, hence an average needs to be taken.
 5B3 Custom function to take a weighted average from the splits. Later splits have more importance as they take more data into account and hence have more weight. A new column is assigned the calculated function result, from which the lowest values are the highest possibility of an anomalous campaign
 5B4 From unique values of the anomaly score, x <= -2 is taken as detected anomaly, as those had the two highest weights and two lowest calculated score.
 5B5 column containing percentage of -1 per column in split + column containing anomaly score = save into csv
 
-Chapter 5C1 Elliptic Ellipse on CTR lag 1
+### Chapter 5C1 Elliptic Ellipse on CTR lag 1
 Data is split by k=3 fold twice, and then split by time 5 times, creating 30 separate splits based on date and campaignId. Isolation Forest model is applied on each split, creating a column with -1 where an anomaly is encountered, and None where the row was used in the test set. 
 5C2 Each split indicates whether the model saw it as an anomaly, hence an average needs to be taken.
 5C3 Custom function to take a weighted average from the splits. Later splits have more importance as they take more data into account and hence have more weight. A new column is assigned the calculated function result, from which the lowest values are the highest possibility of an anomalous campaign
 5C4 From unique values of the anomaly score, x <= -2 is taken as detected anomaly, as those had the two highest weights and two lowest calculated score.
 5C5 column containing percentage of -1 per column in split + column containing anomaly score = save into csv
 
-CTR Lag 1 Extended Isolation Forest
+### CTR Lag 1 Extended Isolation Forest
 5D1 Data is split by k=3 fold twice, and then split by time 5 times, creating 30 separate splits based on date and campaignId. EIF model is applied on each split, creating a column with -1 where an anomaly is encountered, and None where the row was used in the test set. 
 5D2 Each split indicates whether the model saw it as an anomaly, hence an average needs to be taken.
 5D3 Custom function to take a weighted average from the splits. Later splits have more importance as they take more data into account and hence have more weight. A new column is assigned the calculated function result, from which the lowest values are the highest possibility of an anomalous campaign
